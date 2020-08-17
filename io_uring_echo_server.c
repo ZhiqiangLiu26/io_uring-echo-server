@@ -114,7 +114,7 @@ int main(int argc, char *argv[])
 	struct sockaddr_in serv_addr, client_addr;
 	socklen_t client_len = sizeof(client_addr);
 	const int val = 1;
-	const char *opts = "p:fn:l:";
+	const char *opts = "p:fn:l:h";
 
 	myprog = argv[0];
 	while ((c = getopt(argc, argv, opts)) != -1) {
@@ -131,6 +131,9 @@ int main(int argc, char *argv[])
 		case 'l':
 			msg_len = atoi(optarg);
 			break;
+		case 'h':
+			usage();
+			exit(0);
 		default:
 			usage();
 			exit(1);

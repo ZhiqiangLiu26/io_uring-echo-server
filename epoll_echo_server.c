@@ -31,7 +31,7 @@ static void usage(void)
 
 int main(int argc, char *argv[])
 {
-	const char *opts = "p:l:n:";
+	const char *opts = "p:l:n:h:";
 	char c;
 	struct sockaddr_in server_addr, client_addr;
 	socklen_t client_len = sizeof(client_addr);
@@ -52,6 +52,9 @@ int main(int argc, char *argv[])
 		case 'n':
 			max_connections = atoi(optarg);
                         break;
+		case 'h':
+			usage();
+			exit(0);
 		default:
 			usage();
 			exit(1);
