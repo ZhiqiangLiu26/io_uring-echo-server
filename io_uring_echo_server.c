@@ -132,7 +132,7 @@ int main(int argc, char *argv[])
 			msg_len = atoi(optarg);
 			break;
 		default:
-			printf("echo_server -p port_no [-f]\n");
+			usage();
 			exit(1);
 		}
 	}
